@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "493010923808",
+    "firebase_url": "https://daiict-timetable-159d4.firebaseio.com",
+    "project_id": "daiict-timetable-159d4",
+    "storage_bucket": "daiict-timetable-159d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493010923808:android:e5db6ec15ed4b09a",
+        "android_client_info": {
+          "package_name": "com.example.admin.daiict_timetable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493010923808-hojeldm7hqo4g2npj0cmmog2hst6jdtm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.daiict_timetable",
+            "certificate_hash": "7dbd6549fd64a847001290f2b7e04f69b94bfe10"
+          }
+        },
+        {
+          "client_id": "493010923808-nna6veniqob8132p976m1hosb942vv69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1tOvpJio60rVcW3I8d-tRzXXwYF67xhc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493010923808-nna6veniqob8132p976m1hosb942vv69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

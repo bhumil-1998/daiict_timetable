@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <EditText
+                    android:id="@+id/email_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_id_registration"
+                    android:inputType="number"
+                    android:layout_marginTop="50dp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+                <Spinner
+                    android:id="@+id/area_spinner_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/edit_text_margin_top"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/reset_registration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#BDBDBD"
+                    android:text="@string/reset_text"/>
+                <Button
+                    android:id="@+id/registration_button"
+                    android:layout_width="0dp"
+                    android:background="#BDBDBD"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sign up"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/reset_registration"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
