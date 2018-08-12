@@ -224,37 +224,45 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Us
 	android:theme
 		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.example.admin.daiict_timetable.Login
-ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:14:9-16:20
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
 		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:14:19-40
-activity#com.example.admin.daiict_timetable.Registration
-ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:17:9-23:20
-	android:name
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:17:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:18:13-22:29
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:19:17-69
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:19:25-66
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:18:27-74
+activity#com.example.admin.daiict_timetable.Registration
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:21:9-50
+	android:name
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:21:19-47
 activity#com.example.admin.daiict_timetable.Admin_home
-ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:24:9-31:20
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:22:9-29:20
 	android:label
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:26:13-62
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:24:13-62
 	android:theme
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:27:13-56
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:25:13-56
 	android:name
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:25:13-39
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:23:13-39
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:28:13-30:41
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:26:13-28:42
 	android:value
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:30:17-39
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:28:17-39
 	android:name
-		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:29:17-63
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:27:17-63
+activity#com.example.admin.daiict_timetable.Student_home
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:30:9-50
+	android:name
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:30:19-47
+activity#com.example.admin.daiict_timetable.Faculty_home
+ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:31:9-59
+	android:name
+		ADDED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml:31:19-47
 uses-sdk
 INJECTED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\projects\daiict_timetable\app\src\main\AndroidManifest.xml

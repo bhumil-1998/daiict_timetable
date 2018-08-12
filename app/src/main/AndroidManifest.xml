@@ -12,23 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Login">
-
-        </activity>
-        <activity android:name=".Registration" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Registration" />
         <activity
             android:name=".Admin_home"
             android:label="@string/title_activity_admin_home"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Login"/>
+                android:value=".Login" />
         </activity>
+        <activity android:name=".Student_home" />
+        <activity android:name=".Faculty_home"></activity>
     </application>
 
 </manifest>

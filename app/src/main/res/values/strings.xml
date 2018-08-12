@@ -3,7 +3,7 @@
     <string name="action_sign_in">Sign In</string>
     <string name="forgot_password_text">Forgot Password</string>
     <string name="registration_button">New To DA-IICT?</string>
-    <string name="prompt_email">Email</string>
+    <string name="prompt_student_id">Student Id</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="title_activity_admin_home">Admin Home</string>
@@ -15,6 +15,11 @@
     <string-array name="Program">
         <item>MSC-IT</item>
         <item>M.Tech</item>
+    </string-array>
 
+    <string-array name="Type">
+        <item>Faculty</item>
+        <item>Admin</item>
+        <item>Student</item>
     </string-array>
 </resources>

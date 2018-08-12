@@ -1,4 +1,4 @@
-#Sat Aug 11 18:56:38 IST 2018
+#Sun Aug 12 22:43:55 IST 2018
 path.3=classes.dex
 path.2=classes.dex
 path.1=classes.dex
@@ -7,7 +7,7 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.3=F\:\\projects\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
-base.2=F\:\\projects\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
-base.1=F\:\\projects\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
-base.0=F\:\\projects\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
+base.3=F\:\\projects\\daiict_timetable\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+base.2=F\:\\projects\\daiict_timetable\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
+base.1=F\:\\projects\\daiict_timetable\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+base.0=F\:\\projects\\daiict_timetable\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-
+    android:id="@+id/linear_login"
     tools:context=".Login">
 
 
@@ -23,11 +23,11 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/student_id_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress"
+                    android:hint="@string/prompt_student_id"
+                    android:inputType="number"
                     android:maxLines="1"
                     android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
@@ -37,17 +37,18 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/password_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+
+
+
 
             <Button
                 android:id="@+id/email_sign_in_button"
@@ -61,6 +62,12 @@
                 android:textColor="#000000"
                 android:textStyle="bold" />
 
+            <ProgressBar
+                android:id="@+id/progressbar_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
             <TextView
                 android:id="@+id/forgot_password_text"
                 android:layout_width="wrap_content"
@@ -71,22 +78,9 @@
                 android:textColor="#000000"
                 android:textStyle="bold" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="16dp"
-                android:background="#c0c0c0"></View>
 
-            <Button
-                android:id="@+id/registration_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/registration_button"
 
-                android:textColor="#000000"
-                android:textStyle="bold" />
+
 
 
         </LinearLayout>
