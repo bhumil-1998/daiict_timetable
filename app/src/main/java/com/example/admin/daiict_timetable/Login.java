@@ -64,44 +64,48 @@ public class Login extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             boolean check=false;
                             int type_checking=0;
+                            String program=null;
                             Iterable<DataSnapshot> children=dataSnapshot.getChildren();
                             for (DataSnapshot child:children) {
-
 
                                 /*Log.d("data", child.child("type").getValue().toString());
                                 Log.d("data", child.child("program").getValue().toString());
                                 Log.d("data", child.child("password").getValue().toString());*/
-
                                 if (student_id_login.getText().toString().equals(child.child("id").getValue().toString()) && password_login.getText().toString().equals(child.child("password").getValue().toString())) {
                                     if (child.child("type").getValue().toString().equals("Admin")){
                                         type_checking=1;
                                     }
                                     else if (child.child("type").getValue().toString().equals("Student")){
                                         type_checking=2;
+                                        program=child.child("program").toString();
                                     }
                                     else if (child.child("type").getValue().toString().equals("Faculty")){
                                         type_checking=3;
+                                        program=child.child("program").toString();
                                     }
-                                    progressBar.setVisibility(View.GONE);
+
                                     check=true;
                                     break;
-                                } else {
-                                    progressBar.setVisibility(View.GONE);
+                                } else
                                     check=false;
-                                }
+                                progressBar.setVisibility(View.GONE);
                             }
                             if (check==true){
+                                Intent intent=null;
                                 if (type_checking==1) {
                                     //Admin
-                                    startActivity(new Intent(Login.this, Admin_home.class));
+                                    intent = new Intent(Login.this, Admin_home.class);
                                 } else if (type_checking==2) {
                                     //student
-                                    startActivity(new Intent(Login.this, Student_home.class));
+                                    intent.putExtra("program",program);
+                                    intent=new Intent(Login.this, Student_home.class);
                                 }
                                 else if (type_checking==3){
                                     //faculty
-                                    startActivity(new Intent(Login.this, Faculty_home.class));
+                                    intent.putExtra("program",program);
+                                    intent=new Intent(Login.this, Faculty_home.class);
                                 }
+                                startActivity(intent);
                             }
                             else {
                                 Snackbar snackbar = Snackbar.make(linearLayout, "Invalid login credentials", Snackbar.LENGTH_SHORT);

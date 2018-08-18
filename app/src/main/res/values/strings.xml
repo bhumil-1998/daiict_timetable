@@ -9,8 +9,15 @@
     <string name="title_activity_admin_home">Admin Home</string>
 
 
-    <string name="email_id_registration">Student Id</string>
+    <string name="student_id_registration">Student Id</string>
     <string name="reset_text">Reset</string>
+
+    <string name="new_timetable_btn">New TimeTable</string>
+    <string name="subject_new_timetable_edit">Subject</string>
+    <string name="timings_new_timetable_edit">Timings</string>
+    <string name="submit_btn">Submit</string>
+    <string name="Cancel_btn">Cancel</string>
+
 
     <string-array name="Program">
         <item>MSC-IT</item>
@@ -21,5 +28,21 @@
         <item>Faculty</item>
         <item>Admin</item>
         <item>Student</item>
+    </string-array>
+    <string-array name="Year_mtech">
+        <item>First Year</item>
+        <item>Second Year</item>
+        <item>Third Year</item>
+    </string-array>
+    <string-array name="Year_mscit">
+        <item>First Year</item>
+        <item>Second Year</item>
+    </string-array>
+    <string-array name="day">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Firday</item>
     </string-array>
 </resources>

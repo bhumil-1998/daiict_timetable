@@ -30,13 +30,12 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.admin.daiict_timetable.Login" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name="com.example.admin.daiict_timetable.Registration" />
+        <activity android:name="com.example.admin.daiict_timetable.Registration" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Admin_home" />
+        </activity>
         <activity
             android:name="com.example.admin.daiict_timetable.Admin_home"
             android:label="@string/title_activity_admin_home"
@@ -46,7 +45,18 @@
                 android:value=".Login" />
         </activity>
         <activity android:name="com.example.admin.daiict_timetable.Student_home" />
-        <activity android:name="com.example.admin.daiict_timetable.Faculty_home" />
+        <activity android:name="com.example.admin.daiict_timetable.Faculty_home" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.admin.daiict_timetable.New_Timetable" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Admin_home" />
+        </activity>
 
         <service android:name="com.google.firebase.components.ComponentDiscoveryService" >
             <meta-data
