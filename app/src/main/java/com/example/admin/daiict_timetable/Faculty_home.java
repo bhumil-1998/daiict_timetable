@@ -16,6 +16,13 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -24,17 +31,34 @@ import java.util.List;
 public class Faculty_home extends AppCompatActivity {
     String program;
     ListView listView_faculty;
+    DatabaseReference databaseReference;
+    static int separator=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty_home);
         setTitle("Faculty Home");
-        Intent intent=getIntent();
-        program=intent.getStringExtra("program");
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("TimeTable");
+
 
         listView_faculty=findViewById(R.id.listview_faculty);
-        ArrayList<Faculty_list> faculty_lists=new ArrayList<>();
-        faculty_lists.add(new Faculty_list("Tuesday","Maths","1-2"));
+        final ArrayList<Faculty_list> faculty_lists=new ArrayList<>();
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.d("data12",Long.toString(dataSnapshot.child("MSC-IT").child("First Year").getChildrenCount()));
+
+
+                //faculty_lists.add(new Faculty_list(dataSnapshot.child("MSC-IT").child("First Year").getValue().toString(),"Maths","1-2"));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
         Faculty_adapter faculty_adapter=new Faculty_adapter(this,R.layout.list_row,faculty_lists);
         listView_faculty.setAdapter(faculty_adapter);
@@ -87,17 +111,21 @@ public class Faculty_home extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             View view=convertView;
-            if (view==null)
-                view=LayoutInflater.from(Faculty_home.this).inflate(R.layout.list_row,parent,false);
-            Faculty_list current_list= (Faculty_list) faculty_lists.get(position);
-            Log.d("msg1","view method");
-            TextView day_text=view.findViewById(R.id.day_row);
-            TextView subject_text=view.findViewById(R.id.subject_row);
-            TextView timings_text=view.findViewById(R.id.timings_row);
-            Button cancel_row=view.findViewById(R.id.cancel_row);
-            day_text.setText(current_list.getDay());
-            subject_text.setText(current_list.getSubject());
-            timings_text.setText(current_list.getTimings());
+
+            if (view==null) {
+                if (Faculty_home.separator==0) {
+                    view = LayoutInflater.from(Faculty_home.this).inflate(R.layout.list_row, parent, false);
+                    Faculty_list current_list = (Faculty_list) faculty_lists.get(position);
+                    TextView day_text = view.findViewById(R.id.day_row);
+                    TextView subject_text = view.findViewById(R.id.subject_row);
+                    TextView timings_text = view.findViewById(R.id.timings_row);
+                    Button cancel_row = view.findViewById(R.id.cancel_row);
+                    day_text.setText(current_list.getDay());
+                    subject_text.setText(current_list.getSubject());
+                    timings_text.setText(current_list.getTimings());
+                }
+
+            }
 
             return view;
         }

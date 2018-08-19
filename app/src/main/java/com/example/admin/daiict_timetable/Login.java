@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             boolean check=false;
                             int type_checking=0;
-                            String program=null;
+                            String program="MSC-IT";
                             Iterable<DataSnapshot> children=dataSnapshot.getChildren();
                             for (DataSnapshot child:children) {
 
@@ -77,11 +77,12 @@ public class Login extends AppCompatActivity {
                                     }
                                     else if (child.child("type").getValue().toString().equals("Student")){
                                         type_checking=2;
-                                        program=child.child("program").toString();
+                                        program=child.child("program").getValue().toString();
+
                                     }
                                     else if (child.child("type").getValue().toString().equals("Faculty")){
                                         type_checking=3;
-                                        program=child.child("program").toString();
+                                        //program=child.child("program").toString();
                                     }
 
                                     check=true;
@@ -91,18 +92,19 @@ public class Login extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                             }
                             if (check==true){
-                                Intent intent=null;
+                                Intent intent=new Intent();
                                 if (type_checking==1) {
                                     //Admin
                                     intent = new Intent(Login.this, Admin_home.class);
                                 } else if (type_checking==2) {
                                     //student
-                                    intent.putExtra("program",program);
+
                                     intent=new Intent(Login.this, Student_home.class);
+                                    intent.putExtra("program",program);
                                 }
                                 else if (type_checking==3){
                                     //faculty
-                                    intent.putExtra("program",program);
+                                    //intent.putExtra("program",program);
                                     intent=new Intent(Login.this, Faculty_home.class);
                                 }
                                 startActivity(intent);

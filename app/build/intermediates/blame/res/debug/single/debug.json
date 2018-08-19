@@ -1004,6 +1004,10 @@
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\d4119b72c590e13cb10890e109a5bb77\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
+        "merged": "F:\\projects\\daiict_timetable\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_row_student.xml.flat",
+        "source": "F:\\projects\\daiict_timetable\\app\\src\\main\\res\\layout\\list_row_student.xml"
+    },
+    {
         "merged": "F:\\projects\\daiict_timetable\\app\\build\\intermediates\\res\\merged\\debug\\interpolator_mtrl_fast_out_slow_in.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\design-animation-28.0.0-alpha1.aar\\56ddf0cdf7767f706deeeb66d672cb69\\res\\interpolator\\mtrl_fast_out_slow_in.xml"
     },
@@ -1762,6 +1766,10 @@
     {
         "merged": "F:\\projects\\daiict_timetable\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\d4119b72c590e13cb10890e109a5bb77\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\projects\\daiict_timetable\\app\\build\\intermediates\\res\\merged\\debug\\layout_text_separator.xml.flat",
+        "source": "F:\\projects\\daiict_timetable\\app\\src\\main\\res\\layout\\text_separator.xml"
     },
     {
         "merged": "F:\\projects\\daiict_timetable\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",

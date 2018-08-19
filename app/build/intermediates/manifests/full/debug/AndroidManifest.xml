@@ -44,13 +44,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Login" />
         </activity>
-        <activity android:name="com.example.admin.daiict_timetable.Student_home" />
-        <activity android:name="com.example.admin.daiict_timetable.Faculty_home" >
+        <activity android:name="com.example.admin.daiict_timetable.Student_home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.admin.daiict_timetable.Faculty_home" >
         </activity>
         <activity android:name="com.example.admin.daiict_timetable.New_Timetable" >
             <meta-data

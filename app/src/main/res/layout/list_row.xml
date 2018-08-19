@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_weight="0.10"
         android:orientation="vertical">
 
@@ -28,26 +28,26 @@
                 android:id="@+id/subject_row"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_margin="16dp"
                 android:text="subject"
                 android:textSize="16sp"
-                />
+                android:layout_weight="0.50" />
 
             <TextView
                 android:id="@+id/timings_row"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="timings"
-                android:layout_marginLeft="16dp"
+                android:layout_margin="16dp"
                 android:textSize="16sp"
-                />
+                android:layout_weight="0.50"/>
 
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_weight="0.30">
 
         <Button
