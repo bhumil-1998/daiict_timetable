@@ -10,16 +10,30 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Student_home extends AppCompatActivity {
-    //String program;
+    String program="MSC-IT";
     ListView listView;
+    Spinner year_spinner;
+    ArrayList year_list;
+    DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +42,63 @@ public class Student_home extends AppCompatActivity {
         //Intent intent=getIntent();
         //program=intent.getStringExtra("program");
 
+        year_spinner=findViewById(R.id.spinner_student_year);
         listView=findViewById(R.id.list_view_student);
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("TimeTable");
+
+        year_list=new ArrayList();
+        if (program.equals("MSC-IT"))
+            year_list.addAll(Arrays.asList(getResources().getStringArray(R.array.Year_mscit)));
+        else
+            year_list.addAll(Arrays.asList(getResources().getStringArray(R.array.Year_mtech)));
+        ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,year_list);
+        year_spinner.setAdapter(arrayAdapter);
+
         ArrayList<Student_list> student_lists=new ArrayList<>();
         student_lists.add(new Student_list("asdf","qwer","12-13"));
         Student_adapter student_adapter=new Student_adapter(this,R.layout.list_row_student,student_lists);
         listView.setAdapter(student_adapter);
+
+        year_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, final int i, long l) {
+                databaseReference.child(program).child(year_spinner.getSelectedItem().toString()).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String[] day_str=getResources().getStringArray(R.array.day);
+
+                        for (int i=0;i<day_str.length;i++){
+                            //Log.d("msg"+i,dataSnapshot.child(day_str[i]).getValue().toString());
+                            for (int j=0;j<dataSnapshot.child(day_str[i]).getChildrenCount();j++){
+                                //Log.d("innerLoop",dataSnapshot.child(day_str[i]).getChildren().toString());
+                                Iterable<DataSnapshot> children=dataSnapshot.child(day_str[i]).getChildren();
+                                for (DataSnapshot child: children) {
+                                    Log.d("innerLoop",child.getKey().toString());
+                                    Log.d("innerLoop",child.getValue().toString());
+
+                                }
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
     public class Student_list{
         String day,subject,timings;
+
 
         public Student_list(String day, String subject, String timings) {
             this.day = day;
