@@ -14,12 +14,6 @@
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
-    <permission
-        android:name="com.example.admin.daiict_timetable.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.example.admin.daiict_timetable.permission.C2D_MESSAGE" />
-
     <application
         android:allowBackup="true"
         android:debuggable="true"
@@ -27,7 +21,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.admin.daiict_timetable.Login" >
         </activity>
@@ -45,21 +38,33 @@
                 android:value=".Login" />
         </activity>
         <activity android:name="com.example.admin.daiict_timetable.Student_home" >
+        </activity>
+        <activity android:name="com.example.admin.daiict_timetable.Faculty_home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.admin.daiict_timetable.Faculty_home" >
-        </activity>
         <activity android:name="com.example.admin.daiict_timetable.New_Timetable" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Admin_home" />
         </activity>
-
-        <service android:name="com.google.firebase.components.ComponentDiscoveryService" >
+        <!--
+             FirebaseMessagingService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false" >
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
@@ -99,8 +104,6 @@
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
-                <category android:name="com.example.admin.daiict_timetable" />
             </intent-filter>
         </receiver>
         <!--

@@ -1,4 +1,4 @@
-#Tue Aug 21 18:11:26 IST 2018
+#Thu Aug 23 20:21:29 IST 2018
 base.0=F\:\\projects\\daiict_timetable\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.0=classes.dex
 renamed.0=classes.dex

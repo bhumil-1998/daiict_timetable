@@ -4,24 +4,41 @@
             "outputFile": "F:\\projects\\daiict_timetable\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\4c6e083358c96ae7e9d8d3fae6a54d25\\res\\values-uz\\values-uz.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.3.0.aar\\1a51a711a09224a6520ced7ed4c0816f\\res\\values-uz\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "205",
+                        "endColumns": "101",
+                        "endOffsets": "306"
                     },
                     "to": {
-                        "startLines": "38",
+                        "startLines": "37",
                         "startColumns": "4",
-                        "startOffsets": "4684",
-                        "endColumns": "100",
-                        "endOffsets": "4780"
+                        "startOffsets": "4600",
+                        "endColumns": "105",
+                        "endOffsets": "4701"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\b5e8b7bd054905b986bb06b32dd3ab1d\\res\\values-uz\\values.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\486400ba88b20c122b8328334593f0e3\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,1870",
+                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
+                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,1949"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,38",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,4706",
+                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
+                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,4785"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\76ca55bbc6cc203937f43d06d5fd6b65\\res\\values-uz\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,24 +55,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\d4119b72c590e13cb10890e109a5bb77\\res\\values-uz\\values-uz.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\dd1455ab111d60f1e4fb586dd33ec576\\res\\values-uz\\values-uz.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,1870",
-                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
-                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,1949"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,314,428,514,614,730,810,889,973,1082,1189,1290,1398,1503,1610,1771,4600",
-                        "endColumns": "104,103,113,85,99,115,79,78,83,108,106,100,107,104,106,160,98,83",
-                        "endOffsets": "205,309,423,509,609,725,805,884,968,1077,1184,1285,1393,1498,1605,1766,1865,4679"
+                        "startLines": "39",
+                        "startColumns": "4",
+                        "startOffsets": "4790",
+                        "endColumns": "100",
+                        "endOffsets": "4886"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\e4aee43ca2ca60e667592097ad95fbc1\\res\\values-uz\\values.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\f273c86f9222d1575cf91845e7233156\\res\\values-uz\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

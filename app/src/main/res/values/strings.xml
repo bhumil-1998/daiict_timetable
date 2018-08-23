@@ -21,7 +21,7 @@
 
     <string-array name="Program">
         <item>MSC-IT</item>
-        <item>M.Tech</item>
+        <item>MTech</item>
     </string-array>
 
     <string-array name="Type">
@@ -43,6 +43,6 @@
         <item>Tuesday</item>
         <item>Wednesday</item>
         <item>Thursday</item>
-        <item>Firday</item>
+        <item>Friday</item>
     </string-array>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.admin.daiict_timetable;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -34,6 +36,8 @@ public class Student_home extends AppCompatActivity {
     ArrayList year_list;
     DatabaseReference databaseReference;
 
+    ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class Student_home extends AppCompatActivity {
         year_spinner=findViewById(R.id.spinner_student_year);
         listView=findViewById(R.id.list_view_student);
 
+
         databaseReference= FirebaseDatabase.getInstance().getReference("TimeTable");
 
         year_list=new ArrayList();
@@ -55,31 +60,29 @@ public class Student_home extends AppCompatActivity {
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,year_list);
         year_spinner.setAdapter(arrayAdapter);
 
-        ArrayList<Student_list> student_lists=new ArrayList<>();
-        student_lists.add(new Student_list("asdf","qwer","12-13"));
-        Student_adapter student_adapter=new Student_adapter(this,R.layout.list_row_student,student_lists);
-        listView.setAdapter(student_adapter);
+        final ArrayList<Student_list> student_lists=new ArrayList<>();
+    
+
 
         year_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, final int i, long l) {
+                progressDialog=new ProgressDialog(Student_home.this);
+                progressDialog.setMessage("Please Wait....");
+                progressDialog.show();
+                student_lists.clear();
                 databaseReference.child(program).child(year_spinner.getSelectedItem().toString()).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String[] day_str=getResources().getStringArray(R.array.day);
 
                         for (int i=0;i<day_str.length;i++){
-                            //Log.d("msg"+i,dataSnapshot.child(day_str[i]).getValue().toString());
-                            for (int j=0;j<dataSnapshot.child(day_str[i]).getChildrenCount();j++){
-                                //Log.d("innerLoop",dataSnapshot.child(day_str[i]).getChildren().toString());
-                                Iterable<DataSnapshot> children=dataSnapshot.child(day_str[i]).getChildren();
-                                for (DataSnapshot child: children) {
-                                    Log.d("innerLoop",child.getKey().toString());
-                                    Log.d("innerLoop",child.getValue().toString());
-
-                                }
+                            Iterable<DataSnapshot> children=dataSnapshot.child(day_str[i]).getChildren();
+                            for (DataSnapshot child: children) {
+                                student_lists.add(new Student_list(day_str[i],child.getKey(),child.getValue().toString()));
                             }
                         }
+
 
                     }
 
@@ -88,12 +91,16 @@ public class Student_home extends AppCompatActivity {
 
                     }
                 });
+                progressDialog.dismiss();
+                Student_adapter student_adapter=new Student_adapter(Student_home.this,R.layout.list_row_student,student_lists);
+                listView.setAdapter(student_adapter);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
+
         });
     }
     public class Student_list{
@@ -104,6 +111,7 @@ public class Student_home extends AppCompatActivity {
             this.day = day;
             this.subject = subject;
             this.timings = timings;
+
         }
 
         public String getDay() {
